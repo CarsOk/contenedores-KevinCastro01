@@ -22,22 +22,15 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Bienvenidos a mi juego',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
-      body: Center(
+      appBar: AppBar(title: Text('Bienvenidos a mi app')),
+      body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Creador: Kevin Castro',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 40.0,
+                  fontSize: 30.0,
                   color: Colors.green,
                 )),
             Icon(
@@ -45,6 +38,11 @@ class MyHomePage extends StatelessWidget {
               color: Colors.green,
               size: 100.0,
             ),
+            new Image.asset(
+              'assets/logo1.png',
+              width: 300.0,
+              height: 300.0,
+            )
           ],
         ),
       ),
