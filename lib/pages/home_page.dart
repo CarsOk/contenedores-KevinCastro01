@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/segunda_Pag.dart';
+import 'package:flutter_application_1/pages/tercera_Pag.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -36,9 +37,9 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.green,
               ),
-              child: Text('Aqui va a ir una imagen'),
+              child: Center(child: Text('Aqui va a ir una imagen')),
             ),
             ListTile(
               title: Center(child: Text('Juegos gratis')),
@@ -47,19 +48,28 @@ class MyHomePage extends StatelessWidget {
               },
             ),
             Container(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text('Consumir API'),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SecondRoute()));
                 },
+                //style: ButtonStyle(
+                //backgroundColor: Colors.white,
+                //),
               ),
             ),
-            ListTile(
-              title: Center(child: Text('Contactanos')),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Container(
+              child: ElevatedButton(
+                child: Text('Clientes'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ThirdRoute()));
+                },
+                //style: ButtonStyle(
+                //backgroundColor: Colors.white,
+                //),
+              ),
             ),
           ],
         ),

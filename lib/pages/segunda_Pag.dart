@@ -56,7 +56,7 @@ class SecondRoute extends StatelessWidget {
   }
 
   Future<Post> getInfo() async {
-    var uri = Uri.parse('https://jsonplaceholder.typicode.com/posts/10');
+    var uri = Uri.parse('https://jsonplaceholder.typicode.com/posts/20');
     final respuesta = await http.get(uri);
 
     if (respuesta.statusCode == 200) {
