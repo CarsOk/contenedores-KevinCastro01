@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/primera_Pag.dart';
 import 'package:flutter_application_1/pages/segunda_Pag.dart';
 import 'package:flutter_application_1/pages/tercera_Pag.dart';
 
@@ -41,11 +42,17 @@ class MyHomePage extends StatelessWidget {
               ),
               child: Center(child: Text('Aqui va a ir una imagen')),
             ),
-            ListTile(
-              title: Center(child: Text('Juegos gratis')),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Container(
+              child: ElevatedButton(
+                child: Text('Formulario'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FirstRoute()));
+                },
+                //style: ButtonStyle(
+                //backgroundColor: Colors.white,
+                //),
+              ),
             ),
             Container(
               child: ElevatedButton(

@@ -4,11 +4,9 @@
 
 import 'dart:convert';
 
-List<Comment> commentFromJson(String str) =>
-    List<Comment>.from(json.decode(str).map((x) => Comment.fromJson(x)));
+Comment commentFromJson(String str) => Comment.fromJson(json.decode(str));
 
-String commentToJson(List<Comment> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String commentToJson(Comment data) => json.encode(data.toJson());
 
 class Comment {
   Comment({
@@ -19,15 +17,15 @@ class Comment {
     this.body,
   });
 
-  int postId;
-  int id;
+  String postId;
+  String id;
   String name;
   String email;
   String body;
 
   factory Comment.fromJson(Map<String, dynamic> json) => Comment(
         postId: json["postId"],
-        id: json["id"],
+        id: json["id"].toString(),
         name: json["name"],
         email: json["email"],
         body: json["body"],
